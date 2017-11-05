@@ -5,10 +5,8 @@
       <countup-button @add="addCount"></countup-button>
     </div>
     <div id="side">
-      <rankup-menu></rankup-menu>
-      <rankup-menu></rankup-menu>
-      <rankup-menu></rankup-menu>
-      <rankup-menu></rankup-menu>
+      <menu-a :count="count" @sub="subCount" @add="addCount"></menu-a>
+      <menu-b :count="count" @sub="subCount" @add="addCount"></menu-b>
     </div>
   </div>
 </template>
@@ -16,13 +14,16 @@
 <script>
 import Counter from './components/Counter'
 import CountupButton from './components/CountupButton'
-import RankupMenu from './components/RankupMenu'
+import MenuA from './components/RankupMenu/A'
+import MenuB from './components/RankupMenu/B'
+
 export default {
   name: 'app',
   components: {
     Counter,
     CountupButton,
-    RankupMenu
+    MenuA,
+    MenuB
   },
   data () {
     return {
@@ -30,8 +31,11 @@ export default {
     }
   },
   methods: {
-    addCount () {
-      this.count += 1
+    addCount (num) {
+      this.count += num
+    },
+    subCount (num) {
+      this.count -= num
     }
   }
 }
