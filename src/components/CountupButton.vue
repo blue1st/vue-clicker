@@ -1,10 +1,15 @@
 <template>
-  <button>+1</button>
+  <button @click="countup(1)">+1</button>
 </template>
 
 <script>
 export default {
-  name: 'countup-button'
+  name: 'countup-button',
+  methods: {
+    countup (num) {
+      this.$emit('add', num)
+    }
+  }
 }
 </script>
 

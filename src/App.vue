@@ -2,7 +2,7 @@
   <div id="app">
     <div id="main">
       <counter :count="count"></counter>
-      <countup-button></countup-button>
+      <countup-button @add="addCount"></countup-button>
     </div>
     <div id="side">
       <rankup-menu></rankup-menu>
@@ -27,6 +27,11 @@ export default {
   data () {
     return {
       count: 0
+    }
+  },
+  methods: {
+    addCount () {
+      this.count += 1
     }
   }
 }
