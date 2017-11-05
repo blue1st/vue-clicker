@@ -1,10 +1,13 @@
 <template>
-  <p class="count">12345</p>
+  <p class="count">{{count}}</p>
 </template>
 
 <script>
 export default {
-  name: 'counter'
+  name: 'counter',
+  props: {
+    count: Number
+  }
 }
 </script>
 

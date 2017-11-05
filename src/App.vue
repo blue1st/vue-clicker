@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="main">
-      <counter></counter>
+      <counter :count="count"></counter>
       <countup-button></countup-button>
     </div>
     <div id="side">
@@ -23,6 +23,11 @@ export default {
     Counter,
     CountupButton,
     RankupMenu
+  },
+  data () {
+    return {
+      count: 0
+    }
   }
 }
 </script>
